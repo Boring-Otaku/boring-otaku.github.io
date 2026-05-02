@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime & Games Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #ff6b6b;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .anime-section h2 {
+            border-color: #4ecdc4;
+        }
+
+        .games-section h2 {
+            border-color: #ff6b6b;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #ffd93d;
+        }
+
+        .card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .rating {
+            color: #ffd93d;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .favorite-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 3rem;
+        }
+
+        .emoji {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎮 Anime & Games Hub 🎌</h1>
+        <p class="subtitle">Where Gaming Meets Animation Excellence</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#anime">Anime Favorites</a></li>
+            <li><a href="#games">Game Collection</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="home">
+        <section>
+            <h2>Welcome to My World!</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8;">
+                Hey there! 👋 This is my personal corner of the internet where I celebrate 
+                my two greatest passions: <strong>anime</strong> and <strong>video games</strong>. 
+                Whether it's epic shonen battles, heartwarming slice-of-life stories, 
+                immersive RPGs, or competitive multiplayer madness, you'll find it all here!
+            </p>
+        </section>
+
+        <section class="anime-section" id="anime">
+            <h2>🎌 Top Anime Picks</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Attack on Titan <span class="favorite-badge">FAVORITE</span></h3>
+                    <p>An intense story of humanity's fight for survival against giant humanoid creatures. The plot twists are insane!</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card">
+                    <h3>Demon Slayer</h3>
+                    <p>Beautiful animation meets emotional storytelling as Tanjiro journeys to save his demon-turned sister.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card">
+                    <h3>My Hero Academia</h3>
+                    <p>In a world where most people have superpowers, one boy without powers dreams of becoming a hero.</p>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+                <div class="card">
+                    <h3>One Piece <span class="favorite-badge">CLASSIC</span></h3>
+                    <p>The ultimate adventure on the high seas! Follow Luffy and his crew in search of the legendary treasure.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-section" id="games">
+            <h2>🎮 Game Collection</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Elden Ring <span class="favorite-badge">FAVORITE</span></h3>
+                    <p>A masterpiece open-world action RPG with challenging combat and breathtaking world design.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card">
+                    <h3>The Legend of Zelda: BOTW</h3>
+                    <p>Explore the vast kingdom of Hyrule in this revolutionary open-world adventure.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card">
+                    <h3>Persona 5 Royal</h3>
+                    <p>Style, substance, and an unforgettable story. The perfect blend of JRPG and life simulation.</p>
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card">
+                    <h3>Hollow Knight</h3>
+                    <p>A beautifully crafted metroidvania with tight controls and atmospheric exploration.</p>
+                    <div class="rating">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About This Site</h2>
+            <p style="line-height: 1.8;">
+                This website is a celebration of the amazing worlds found in both anime and video games. 
+                Both mediums tell incredible stories, create memorable characters, and transport us to 
+                fantastical realms. Whether I'm binge-watching the latest seasonal anime or grinding 
+                through a challenging game boss, these hobbies bring me endless joy and inspiration!
+            </p>
+            <p style="margin-top: 1rem; font-style: italic;">
+                "Life is too short for bad anime and boring games!" 🚀
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made with <span class="emoji">❤️</span> for Anime & Games</p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">© 2024 Anime & Games Hub</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactivity to cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.25)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255, 255, 255, 0.15)';
+            });
+        });
+
+        console.log('Welcome to the Anime & Games Hub! 🎮🎌');
+    </script>
+</body>
+</html>
