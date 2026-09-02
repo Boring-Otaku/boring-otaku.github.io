@@ -1,1 +1,0 @@
-# boring-otaku.github-io
