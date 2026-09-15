@@ -1,0 +1,95 @@
+/* ============================================
+   Konami Code — Corrupted Theme & Petals
+   ============================================ */
+
+/* --- Screen Flash --- */
+.konami-flash {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-konami);
+  background: white;
+  pointer-events: none;
+  animation: konami-flash-anim 0.6s ease forwards;
+}
+
+@keyframes konami-flash-anim {
+  0% { opacity: 0; }
+  15% { opacity: 0.8; }
+  30% { opacity: 0; }
+  45% { opacity: 0.4; }
+  100% { opacity: 0; }
+}
+
+/* --- Glitch Shake --- */
+.konami-glitch {
+  animation: konami-shake 0.3s ease 3;
+}
+
+@keyframes konami-shake {
+  0%, 100% { transform: translate(0); }
+  25% { transform: translate(-4px, 2px); }
+  50% { transform: translate(3px, -3px); }
+  75% { transform: translate(-2px, 4px); }
+}
+
+/* --- Crimson Petals --- */
+.petal {
+  position: fixed;
+  z-index: var(--z-konami);
+  pointer-events: none;
+  width: 12px;
+  height: 12px;
+  background: var(--crimson-rose);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0.7;
+  animation: petal-fall linear forwards;
+  filter: blur(0.5px);
+  box-shadow: 0 0 6px rgba(225, 29, 72, 0.3);
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Petal size variants */
+.petal.small { width: 8px; height: 8px; }
+.petal.large { width: 16px; height: 16px; }
+
+/* --- Konami VN Line --- */
+.konami-vn-flash {
+  color: var(--crimson-rose) !important;
+  text-shadow: 0 0 10px rgba(225, 29, 72, 0.5) !important;
+}
+
+/* --- Theme transition --- */
+body {
+  transition: --violet-neon 1s ease, --violet-bright 1s ease;
+}
+
+.theme-corrupted .ambient-orb {
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.08) 0%, rgba(225, 29, 72, 0.02) 40%, transparent 70%) !important;
+}
+
+.theme-corrupted .vn-portrait {
+  filter: brightness(0.8) contrast(1.2) hue-rotate(-30deg) !important;
+}
+
+.theme-corrupted #crt-overlay::before {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(225, 29, 72, 0.08) 1px,
+    rgba(225, 29, 72, 0.08) 2px
+  ) !important;
+}
