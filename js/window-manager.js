@@ -314,5 +314,46 @@ const WindowManager = (() => {
     });
   }
 
-  return { open, close, focus, minimize, restore };
+  function initStartMenu() {
+    const startBtn = document.getElementById('taskbar-start');
+    const startMenu = document.getElementById('start-menu');
+    const rebootBtn = document.getElementById('start-reboot-btn');
+    if (!startBtn || !startMenu) return;
+
+    // Toggle menu
+    startBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = startMenu.classList.toggle('open');
+      startBtn.classList.toggle('active', isOpen);
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!startMenu.contains(e.target) && e.target !== startBtn) {
+        startMenu.classList.remove('open');
+        startBtn.classList.remove('active');
+      }
+    });
+
+    // Quick launch items
+    startMenu.querySelectorAll('.start-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const app = btn.dataset.app;
+        if (app) {
+          open(app);
+          startMenu.classList.remove('open');
+          startBtn.classList.remove('active');
+        }
+      });
+    });
+
+    // Reboot button
+    if (rebootBtn) {
+      rebootBtn.addEventListener('click', () => {
+        window.location.reload();
+      });
+    }
+  }
+
+  return { open, close, focus, minimize, restore, initStartMenu };
 })();

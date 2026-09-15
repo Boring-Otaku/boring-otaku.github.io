@@ -96,7 +96,44 @@
        Layer 5: Taskbar
        ============================================ -->
   <div id="taskbar">
-    <div class="taskbar-start">OtakuOS</div>
+    <!-- Start Menu Popup -->
+    <div id="start-menu" class="start-menu">
+      <div class="start-menu-header">
+        <span class="start-menu-avatar">🌙</span>
+        <div class="start-menu-user">
+          <div class="start-menu-title">OtakuOS</div>
+          <div class="start-menu-status">Terminal Protocol v2.7.1</div>
+        </div>
+      </div>
+      <div class="start-menu-items">
+        <button class="start-item" data-app="chronicle">
+          <span class="start-item-icon">📜</span>
+          <div class="start-item-text">
+            <span class="start-item-name">Chronicle Engine (記録)</span>
+            <span class="start-item-desc">Anime, Manga, Games, Dev Builds</span>
+          </div>
+        </button>
+        <button class="start-item" data-app="blackmarket">
+          <span class="start-item-icon">🏴</span>
+          <div class="start-item-text">
+            <span class="start-item-name">Black Market (闇市)</span>
+            <span class="start-item-desc">GitHub Repositories & Artifacts</span>
+          </div>
+        </button>
+        <button class="start-item" data-app="terminal">
+          <span class="start-item-icon">⚔️</span>
+          <div class="start-item-text">
+            <span class="start-item-name">Boss Raid Console (端末)</span>
+            <span class="start-item-desc">Interactive CLI Shell</span>
+          </div>
+        </button>
+      </div>
+      <div class="start-menu-footer">
+        <button class="start-reboot-btn" id="start-reboot-btn">⚡ Reboot System</button>
+      </div>
+    </div>
+
+    <div class="taskbar-start" id="taskbar-start" title="Click to open applications">OtakuOS</div>
     <div class="taskbar-divider"></div>
 
     <div class="taskbar-windows"></div>

@@ -86,9 +86,11 @@
   border-color: rgba(139, 92, 246, 0.15);
 }
 
-.desktop-icon.selected {
+.desktop-icon.selected,
+.desktop-icon:focus {
   background: rgba(139, 92, 246, 0.15);
   border-color: var(--violet-border);
+  outline: none;
 }
 
 .desktop-icon .icon-glyph {

@@ -40,9 +40,15 @@ const Boot = (() => {
     // Initialize desktop
     Desktop.init();
     StatusBar.init();
+    WindowManager.initStartMenu();
     VNEngine.init();
     CRTShader.init();
     Konami.init();
+
+    // Auto-open primary interactive module (Chronicle) on first boot
+    setTimeout(() => {
+      WindowManager.open('chronicle');
+    }, 300);
   }
 
   async function playBootSequence(container) {

@@ -39,6 +39,8 @@ const Desktop = (() => {
       const el = Utils.el('div', {
         className: 'desktop-icon',
         id: `icon-${icon.id}`,
+        tabIndex: 0,
+        title: `${icon.sublabel} (Click to open)`,
         'data-window-type': icon.windowType,
       },
         Utils.el('div', { className: 'icon-glyph', textContent: icon.glyph }),
@@ -46,28 +48,29 @@ const Desktop = (() => {
         Utils.el('div', { className: 'icon-sublabel', textContent: icon.sublabel }),
       );
 
+      // Single click selects and opens window immediately for great responsiveness
       el.addEventListener('click', (e) => {
         e.stopPropagation();
-        handleIconClick(icon, el);
+        selectIcon(el);
+        openWindow(icon);
+      });
+
+      // Double click fallback
+      el.addEventListener('dblclick', (e) => {
+        e.stopPropagation();
+        openWindow(icon);
+      });
+
+      // Keyboard accessibility (Enter or Space to open)
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openWindow(icon);
+        }
       });
 
       container.appendChild(el);
     });
-  }
-
-  function handleIconClick(icon, el) {
-    if (clickTimer) {
-      // Double click
-      clearTimeout(clickTimer);
-      clickTimer = null;
-      openWindow(icon);
-    } else {
-      // First click — select, wait for potential double
-      selectIcon(el);
-      clickTimer = setTimeout(() => {
-        clickTimer = null;
-      }, 350);
-    }
   }
 
   function selectIcon(el) {
