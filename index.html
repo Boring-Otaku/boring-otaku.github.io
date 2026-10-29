@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boring Otaku</title>
+  <meta name="description" content="Personal homepage of Boring Otaku.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Boring Otaku</h1>
+      <p class="tagline">Hi, I'm glad you stopped by.</p>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        A few words about yourself go here. What you do, what you're into,
+        and what you're working on lately.
+      </p>
+    </section>
+
+    <section>
+      <h2>Links</h2>
+      <ul class="links">
+        <li><a href="https://github.com/Boring-Otaku">GitHub</a></li>
+        <li><a href="mailto:yourhomeotaku@gmail.com">Email</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Boring Otaku</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
